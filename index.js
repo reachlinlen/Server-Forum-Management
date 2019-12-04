@@ -30,7 +30,9 @@ app.post('/authenticate', cors(), jsonParser, (req,res) => {
         console.log('@Authenticate-docs')
         return res.send(authenticated)
       })
-      .catch(err => { error: true })
+      .catch(err => { 
+        return res.send(false)
+      })
 })
 //
 app.get('/topics', cors(), (req,res) => {
